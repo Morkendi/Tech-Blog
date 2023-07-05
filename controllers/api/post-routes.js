@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
             },
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'comment_text', 'user_id', 'post_id', 'created_at'],
                 include: [{
                     model: User,
                     attributes: ['username', 'twitter', 'github']
@@ -31,11 +31,11 @@ router.get('/', async (req, res) => {
 // GET a single post
 router.get('/:id', async (req, res) => {
     try{
-        const singlePost = await Post.findOne(req.params.id, {
-            attributes: ['id', 'title', 'content', 'created_at'],
+        const singlePost = await Post.findOne({
             where: {
                 id: req.params.id,
             },
+            attributes: ['id', 'title', 'content', 'created_at'],
             include: [{
                 model: User,
                 attributes: ['username', 'twitter', 'github']
