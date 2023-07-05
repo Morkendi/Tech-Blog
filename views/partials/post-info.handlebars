@@ -1,0 +1,29 @@
+<div class="">
+    <header class="">
+    
+        <div class="">
+            < class=""><a href="/post/{{id}}"  class="">
+            {{title}}
+            </a></p>
+        </div>
+
+        <div class="">
+        <span class="">
+            
+        </span>
+        </div>
+    
+    </header>
+
+    <div class="">
+        <div class="">
+            {{post_content}}
+        </div>
+            <div class="">
+                <b>{{user.username}}</b> | 
+                <a href="https://twitter.com/{{user.twitter}}"><i class="fab fa-twitter"></i></a> 
+                <a href="https://github.com/{{user.github}}"><i class="fab fa-github"></i></a>
+                    | {{format_date created_at}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+            </div>
+        
+    </div>
