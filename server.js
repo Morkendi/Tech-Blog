@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3001;
 // Set up Handlebars engine with helpers
 const hbs = exphbs.create({helpers});
 
-const session = {
+const sess = {
     secret: process.env.SESSION_SECRET,
     cookie: {
     // Session expires after 30 minutes
